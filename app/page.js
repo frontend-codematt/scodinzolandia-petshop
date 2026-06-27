@@ -3,16 +3,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-16 text-center">
-      {/* Decorazioni soft sullo sfondo, nei colori del brand */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-teal/15 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-brand-tan/25 blur-3xl"
-      />
-
       <div
         className="flex flex-col items-center gap-8"
         style={{ animation: "fade-up 0.7s ease-out both" }}
