@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#fdfcfa">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#fdfcfa"/>
+    <circle cx="600" cy="360" r="150" fill="#6bc1bc"/>
+    <g fill="#fff">
+      <ellipse cx="600" cy="395" rx="62" ry="48"/>
+      <ellipse cx="540" cy="320" rx="24" ry="34"/>
+      <ellipse cx="660" cy="320" rx="24" ry="34"/>
+      <ellipse cx="492" cy="372" rx="20" ry="28"/>
+      <ellipse cx="708" cy="372" rx="20" ry="28"/>
+    </g>
+    <text x="600" y="600" font-family="Quicksand, sans-serif" font-size="72" font-weight="700" fill="#3f4346" text-anchor="middle">Scodinzolandia</text>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:#4b4f52;background:#fdfcfa;-webkit-font-smoothing:antialiased}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  ::selection{background:#bfe7e4}
+  @media(max-width:860px){.m-2{grid-template-columns:repeat(2,1fr)!important;gap:14px!important}.m-1{grid-template-columns:1fr!important}}
+  @media(max-width:560px){.s-1{grid-template-columns:1fr!important}}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+  <dc-import name="Header" hint-size="100%,120px"></dc-import>
+
+  <!-- hero -->
+  <section class="m-1" style="max-width:1240px;margin:0 auto;padding:54px 24px 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#fbeef3;color:#e58ea7;font-family:'Quicksand';font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px;letter-spacing:.03em;text-transform:uppercase">
+        <span style="width:7px;height:7px;border-radius:99px;background:#e58ea7"></span> Il negozio che scodinzola con te
+      </div>
+      <h1 style="font-family:'Quicksand';font-weight:700;font-size:58px;line-height:1.04;letter-spacing:-.01em;color:#3f4346;margin:18px 0 0">Tutto il meglio per<br/>il tuo <span style="color:#6bc1bc">cane</span> e il tuo <span style="color:#e58ea7">gatto</span></h1>
+      <p style="font-family:'Nunito';font-size:19px;line-height:1.55;color:#7d8285;max-width:480px;margin-top:18px">Cibo selezionato, accessori e coccole consegnate a casa. Prodotti scelti da chi gli animali li ama davvero.</p>
+      <div style="display:flex;gap:14px;margin-top:30px">
+        <a href="Scodinzolandia Catalogo.dc.html" style="font-family:'Quicksand';font-weight:700;font-size:17px;color:#fff;background:#6bc1bc;border:none;border-radius:999px;padding:16px 32px;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px -8px rgba(107,193,188,.8)" style-hover="background:#57b1ab">Scopri il catalogo</a>
+        <a href="Scodinzolandia Catalogo.dc.html?sale=1" style="font-family:'Quicksand';font-weight:700;font-size:17px;color:#4b4f52;background:#fff;border:1px solid #e3ddd4;border-radius:999px;padding:16px 32px;cursor:pointer;text-decoration:none" style-hover="border-color:#6bc1bc;color:#6bc1bc">Vedi le offerte</a>
+      </div>
+      <div style="display:flex;gap:28px;margin-top:34px">
+        <div><div style="font-family:'Quicksand';font-weight:700;font-size:26px;color:#3f4346">4.000+</div><div style="font-family:'Nunito';font-size:14px;color:#9aa0a3">prodotti</div></div>
+        <div style="width:1px;background:#ece8e2"></div>
+        <div><div style="font-family:'Quicksand';font-weight:700;font-size:26px;color:#3f4346">24/48h</div><div style="font-family:'Nunito';font-size:14px;color:#9aa0a3">consegna</div></div>
+        <div style="width:1px;background:#ece8e2"></div>
+        <div><div style="font-family:'Quicksand';font-weight:700;font-size:26px;color:#3f4346">12.500</div><div style="font-family:'Nunito';font-size:14px;color:#9aa0a3">clienti felici</div></div>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div style="aspect-ratio:1/1;border-radius:32px;overflow:hidden;border:1px solid #e6ded2;animation:floaty 6s ease-in-out infinite">
+        <img src="https://placedog.net/800/800?id=170" alt="Cane felice" style="width:100%;height:100%;object-fit:cover;display:block"/>
+      </div>
+      <div style="position:absolute;top:-14px;right:-14px;width:130px;height:130px;border-radius:24px;overflow:hidden;border:4px solid #fdfcfa;box-shadow:0 14px 30px -14px rgba(60,60,60,.4)">
+        <img src="https://cataas.com/cat?width=300&height=300&n=170" alt="Gatto" style="width:100%;height:100%;object-fit:cover;display:block"/>
+      </div>
+      <div style="position:absolute;bottom:-18px;left:-18px;background:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 14px 30px -14px rgba(60,60,60,.35);display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;border-radius:12px;background:#fbf2e2;display:flex;align-items:center;justify-content:center;font-size:20px">&#9203;</div>
+        <div><div style="font-family:'Quicksand';font-weight:700;font-size:15px;color:#3f4346">Ordina entro le 15:00</div><div style="font-family:'Nunito';font-size:13px;color:#9aa0a3">spedito oggi stesso</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- pet split -->
+  <section class="s-1" style="max-width:1240px;margin:0 auto;padding:30px 24px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <a href="Scodinzolandia Catalogo.dc.html?cat=cane" style="position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(120deg,#fbf2e2,#fdf8ee);border:1px solid #f0e4cf;padding:34px 36px;cursor:pointer;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none" style-hover="border-color:#efbe82">
+      <div>
+        <div style="font-family:'Quicksand';font-weight:700;font-size:30px;color:#3f4346">Per il Cane</div>
+        <p style="font-family:'Nunito';font-size:16px;color:#9b8a66;margin-top:6px;max-width:240px">Crocchette, snack, guinzagli, cucce e tanto altro</p>
+      </div>
+      <span style="font-family:'Quicksand';font-weight:700;font-size:15px;color:#c79a4e">Esplora &rarr;</span>
+      <div style="position:absolute;right:-10px;bottom:-10px;width:120px;height:120px;border-radius:50%;background:#efbe82;opacity:.22"></div>
+    </a>
+    <a href="Scodinzolandia Catalogo.dc.html?cat=gatto" style="position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(120deg,#fbeef3,#fdf6f9);border:1px solid #f4d9e3;padding:34px 36px;cursor:pointer;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none" style-hover="border-color:#e58ea7">
+      <div>
+        <div style="font-family:'Quicksand';font-weight:700;font-size:30px;color:#3f4346">Per il Gatto</div>
+        <p style="font-family:'Nunito';font-size:16px;color:#b87f96;margin-top:6px;max-width:240px">Umido, lettiere, tiragraffi, giochi e relax</p>
+      </div>
+      <span style="font-family:'Quicksand';font-weight:700;font-size:15px;color:#d96f93">Esplora &rarr;</span>
+      <div style="position:absolute;right:-10px;bottom:-10px;width:120px;height:120px;border-radius:50%;background:#e58ea7;opacity:.20"></div>
+    </a>
+  </section>
+
+  <!-- categories -->
+  <section style="max-width:1240px;margin:0 auto;padding:26px 24px 10px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:22px">
+      <h2 style="font-family:'Quicksand';font-weight:700;font-size:30px;color:#3f4346">Acquista per categoria</h2>
+      <a href="Scodinzolandia Catalogo.dc.html" style="font-family:'Quicksand';font-weight:700;font-size:15px;color:#6bc1bc;text-decoration:none">Tutte le categorie &rarr;</a>
+    </div>
+    <div class="m-2" style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px">
+      <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="6">
+        <a href="{{ cat.href }}" style="background:#fff;border:1px solid #efeae3;border-radius:20px;padding:22px 14px;text-align:center;cursor:pointer;transition:transform .15s;text-decoration:none;display:block" style-hover="transform:translateY(-4px);border-color:#cfeae7">
+          <div style="width:54px;height:54px;margin:0 auto 12px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;background:{{ cat.bg }}">{{ cat.icon }}</div>
+          <div style="font-family:'Quicksand';font-weight:600;font-size:15px;color:#4b4f52">{{ cat.name }}</div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- products -->
+  <section style="max-width:1240px;margin:0 auto;padding:34px 24px 10px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:14px">
+      <h2 style="font-family:'Quicksand';font-weight:700;font-size:30px;color:#3f4346">I pi&ugrave; amati questa settimana</h2>
+      <div style="display:flex;gap:8px;background:#f1f0ec;padding:5px;border-radius:999px">
+        <sc-if value="{{ isAll }}" hint-placeholder-val="{{ true }}"><button onClick="{{ filterAll }}" style="font-family:'Quicksand';font-weight:700;font-size:15px;border:none;border-radius:999px;padding:9px 20px;cursor:pointer;background:#fff;color:#3aa39c;box-shadow:0 2px 8px -2px rgba(60,60,60,.25)">Tutti</button></sc-if>
+        <sc-if value="{{ notAll }}" hint-placeholder-val="x"><button onClick="{{ filterAll }}" style="font-family:'Quicksand';font-weight:700;font-size:15px;border:none;border-radius:999px;padding:9px 20px;cursor:pointer;background:transparent;color:#8a8f91">Tutti</button></sc-if>
+        <sc-if value="{{ isCane }}" hint-placeholder-val="x"><button onClick="{{ filterCane }}" style="font-family:'Quicksand';font-weight:700;font-size:15px;border:none;border-radius:999px;padding:9px 20px;cursor:pointer;background:#fff;color:#3aa39c;box-shadow:0 2px 8px -2px rgba(60,60,60,.25)">Cane</button></sc-if>
+        <sc-if value="{{ notCane }}" hint-placeholder-val="{{ true }}"><button onClick="{{ filterCane }}" style="font-family:'Quicksand';font-weight:700;font-size:15px;border:none;border-radius:999px;padding:9px 20px;cursor:pointer;background:transparent;color:#8a8f91">Cane</button></sc-if>
+        <sc-if value="{{ isGatto }}" hint-placeholder-val="x"><button onClick="{{ filterGatto }}" style="font-family:'Quicksand';font-weight:700;font-size:15px;border:none;border-radius:999px;padding:9px 20px;cursor:pointer;background:#fff;color:#3aa39c;box-shadow:0 2px 8px -2px rgba(60,60,60,.25)">Gatto</button></sc-if>
+        <sc-if value="{{ notGatto }}" hint-placeholder-val="{{ true }}"><button onClick="{{ filterGatto }}" style="font-family:'Quicksand';font-weight:700;font-size:15px;border:none;border-radius:999px;padding:9px 20px;cursor:pointer;background:transparent;color:#8a8f91">Gatto</button></sc-if>
+      </div>
+    </div>
+    <div class="m-2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px">
+      <sc-for list="{{ visibleProducts }}" as="p" hint-placeholder-count="8">
+        <div style="background:#fff;border:1px solid #efeae3;border-radius:22px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:0 16px 34px -20px rgba(60,60,60,.4)">
+          <a href="{{ p.href }}" style="position:relative;display:block;aspect-ratio:1/1;overflow:hidden">
+            <img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
+            <span style="position:absolute;top:12px;left:12px;font-family:'Quicksand';font-weight:700;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:{{ p.tagbg }};padding:4px 10px;border-radius:999px">{{ p.tag }}</span>
+            <sc-if value="{{ p.sale }}" hint-placeholder-val="x"><span style="position:absolute;top:12px;right:12px;font-family:'Quicksand';font-weight:700;font-size:11px;color:#fff;background:#e58ea7;padding:4px 9px;border-radius:999px">-{{ p.sale }}%</span></sc-if>
+          </a>
+          <div style="padding:16px 16px 18px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'Nunito';font-size:12px;color:#aeb3b5;font-weight:700;letter-spacing:.03em;text-transform:uppercase">{{ p.brand }}</div>
+            <a href="{{ p.href }}" style="font-family:'Quicksand';font-weight:600;font-size:16px;color:#3f4346;line-height:1.25;margin:5px 0 8px;flex:1;text-decoration:none" style-hover="color:#6bc1bc">{{ p.name }}</a>
+            <div style="display:flex;align-items:center;gap:5px;margin-bottom:12px">
+              <span style="color:#efbe82;font-size:13px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span style="font-family:'Nunito';font-size:12px;color:#aeb3b5">({{ p.reviews }})</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <div style="display:flex;flex-direction:column">
+                <sc-if value="{{ p.oldPrice }}" hint-placeholder-val="x"><span style="font-family:'Nunito';font-size:12px;color:#c2c6c8;text-decoration:line-through">{{ p.oldPrice }}</span></sc-if>
+                <span style="font-family:'Quicksand';font-weight:700;font-size:21px;color:#3f4346">{{ p.price }}</span>
+              </div>
+              <button onClick="{{ p.add }}" style="border:none;background:#eaf6f5;color:#3aa39c;width:44px;height:44px;border-radius:14px;cursor:pointer;font-size:20px;flex:none" style-hover="background:#6bc1bc;color:#fff">+</button>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:34px"><a href="Scodinzolandia Catalogo.dc.html" style="display:inline-block;font-family:'Quicksand';font-weight:700;font-size:16px;color:#3aa39c;background:#eaf6f5;text-decoration:none;padding:14px 30px;border-radius:999px" style-hover="background:#dcefec">Vedi tutti i prodotti &rarr;</a></div>
+  </section>
+
+  <!-- subscription banner -->
+  <section style="max-width:1240px;margin:46px auto 0;padding:0 24px">
+    <div class="m-1" style="position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(115deg,#6bc1bc,#4ea8a2);padding:48px 52px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center">
+      <div>
+        <div style="display:inline-block;font-family:'Quicksand';font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.2);padding:6px 14px;border-radius:999px">Abbonamento Scodinzola</div>
+        <h2 style="font-family:'Quicksand';font-weight:700;font-size:38px;color:#fff;line-height:1.08;margin:16px 0 10px">Il cibo giusto, sempre puntuale</h2>
+        <p style="font-family:'Nunito';font-size:18px;color:#e7f7f5;max-width:460px;line-height:1.5">Scegli la frequenza, risparmi il 15% e non resti mai senza crocchette. Pausa o annulla quando vuoi.</p>
+        <a href="Scodinzolandia Catalogo.dc.html" style="display:inline-block;margin-top:24px;font-family:'Quicksand';font-weight:700;font-size:17px;color:#3aa39c;background:#fff;border:none;border-radius:999px;padding:15px 30px;cursor:pointer;text-decoration:none" style-hover="background:#fbf2e2">Attiva e risparmia 15%</a>
+      </div>
+      <div style="aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:3px solid rgba(255,255,255,.4)">
+        <img src="https://placedog.net/600/450?id=88" alt="Cane" style="width:100%;height:100%;object-fit:cover;display:block"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- value props -->
+  <section class="m-2" style="max-width:1240px;margin:0 auto;padding:48px 24px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+    <sc-for list="{{ valueProps }}" as="v" hint-placeholder-count="4">
+      <div style="text-align:center;padding:8px 10px">
+        <div style="width:58px;height:58px;margin:0 auto 14px;border-radius:18px;background:#eaf6f5;display:flex;align-items:center;justify-content:center;font-size:26px">{{ v.icon }}</div>
+        <div style="font-family:'Quicksand';font-weight:700;font-size:17px;color:#3f4346">{{ v.title }}</div>
+        <div style="font-family:'Nunito';font-size:14px;color:#9aa0a3;margin-top:5px;line-height:1.45">{{ v.text }}</div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- brands -->
+  <section style="background:#f7f5f1;margin-top:30px;padding:30px 0;overflow:hidden">
+    <div style="text-align:center;font-family:'Nunito';font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#aeb3b5;margin-bottom:20px">Le marche di cui ti fidi</div>
+    <div style="display:flex;gap:60px;width:max-content;animation:marquee 26s linear infinite;padding-left:60px">
+      <sc-for list="{{ brands }}" as="b" hint-placeholder-count="12">
+        <span style="font-family:'Quicksand';font-weight:700;font-size:24px;color:#c2bcb1;white-space:nowrap">{{ b }}</span>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- newsletter -->
+  <section style="max-width:1240px;margin:0 auto;padding:56px 24px">
+    <div style="background:#fbeef3;border:1px solid #f4d9e3;border-radius:28px;padding:46px;text-align:center">
+      <h2 style="font-family:'Quicksand';font-weight:700;font-size:32px;color:#3f4346">Unisciti al branco &#128062;</h2>
+      <p style="font-family:'Nunito';font-size:17px;color:#a8829a;margin:10px auto 24px;max-width:460px">Iscriviti e ricevi subito <b style="color:#d96f93">10% di sconto</b> sul primo ordine, consigli e offerte dedicate.</p>
+      <div style="display:flex;gap:10px;max-width:440px;margin:0 auto">
+        <input placeholder="La tua email" style="flex:1;border:1px solid #f0cdd9;border-radius:999px;padding:14px 20px;font-family:'Nunito';font-size:15px;outline:none;background:#fff"/>
+        <button style="font-family:'Quicksand';font-weight:700;font-size:16px;color:#fff;background:#e58ea7;border:none;border-radius:999px;padding:14px 28px;cursor:pointer" style-hover="background:#d96f93">Iscrivimi</button>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'tutti', ready: false };
+
+  async componentDidMount() {
+    this.mod = await import(new URL('cart.js', location.href).href);
+    this.setState({ ready: true });
+  }
+
+  renderVals() {
+    const f = this.state.filter;
+    const P = this.mod ? this.mod.PRODUCTS : [];
+    const fmt = this.mod ? this.mod.fmt : (n => n);
+
+    const visible = P
+      .filter(p => f === 'tutti' || p.cat === f)
+      .slice(0, 8)
+      .map(p => ({
+        ...p,
+        href: 'Scodinzolandia Prodotto.dc.html?id=' + p.id,
+        tag: p.cat === 'cane' ? 'Cane' : 'Gatto',
+        tagbg: p.cat === 'cane' ? '#dca94f' : '#e58ea7',
+        price: fmt(p.price),
+        oldPrice: p.oldPrice ? fmt(p.oldPrice) : null,
+        sale: p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : null,
+        add: () => this.mod && this.mod.addToCart(p.id),
+      }));
+
+    const cc = 'Scodinzolandia Catalogo.dc.html?categoria=';
+    return {
+      isAll: f === 'tutti', notAll: f !== 'tutti',
+      isCane: f === 'cane', notCane: f !== 'cane',
+      isGatto: f === 'gatto', notGatto: f !== 'gatto',
+      filterAll: () => this.setState({ filter: 'tutti' }),
+      filterCane: () => this.setState({ filter: 'cane' }),
+      filterGatto: () => this.setState({ filter: 'gatto' }),
+      visibleProducts: visible,
+      categories: [
+        { name: 'Cibo secco', icon: '\uD83E\uDDB4', bg: '#fbf2e2', href: cc + 'Cibo%20secco' },
+        { name: 'Cibo umido', icon: '\uD83C\uDF7D\uFE0F', bg: '#fbeef3', href: cc + 'Cibo%20umido' },
+        { name: 'Snack', icon: '\uD83C\uDF6A', bg: '#eaf6f5', href: cc + 'Snack' },
+        { name: 'Giochi', icon: '\uD83E\uDDF6', bg: '#fbf2e2', href: cc + 'Giochi' },
+        { name: 'Igiene', icon: '\uD83E\uDEE7', bg: '#eaf6f5', href: cc + 'Igiene' },
+        { name: 'Cucce', icon: '\uD83D\uDECF\uFE0F', bg: '#fbeef3', href: cc + 'Cucce' },
+      ],
+      valueProps: [
+        { icon: '\uD83D\uDE9A', title: 'Consegna 24/48h', text: 'Gratis sopra i 49€, ovunque in Italia' },
+        { icon: '\uD83C\uDFEC', title: 'Ritiro in negozio', text: 'Ordina online, ritira quando vuoi' },
+        { icon: '\uD83D\uDC9A', title: 'Consigli di esperti', text: 'Il nostro staff ti guida nella scelta' },
+        { icon: '\uD83D\uDD04', title: 'Reso facile', text: '30 giorni per cambiare idea' },
+      ],
+      brands: ['NaturalPet', 'GattoGourmet', 'DentaDog', 'PuroGatto', 'PlayPaws', 'DreamDog', 'CatTower', 'FelixPro', 'WalkEasy', 'SoftCare', 'NaturalPet', 'PlayPaws'],
+    };
+  }
+}
+</script>
+</body>
+</html>

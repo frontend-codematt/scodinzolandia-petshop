@@ -1,0 +1,36 @@
+SCODINZOLANDIA — SITO E-COMMERCE (export completo)
+==================================================
+
+CONTENUTO
+- Scodinzolandia Home.dc.html ....... Homepage
+- Scodinzolandia Catalogo.dc.html ... Catalogo con filtri
+- Scodinzolandia Prodotto.dc.html ... Pagina prodotto
+- Scodinzolandia Carrello.dc.html ... Carrello
+- Scodinzolandia Checkout.dc.html ... Checkout + conferma
+- Header.dc.html / Footer.dc.html ... Componenti condivisi
+- cart.js ........................... Dati prodotti + logica carrello
+- support.js ........................ Runtime dei componenti
+- assets/logo.png ................... Logo
+
+COME APRIRLO (IMPORTANTE)
+Il sito carica i componenti e i dati via JavaScript, quindi NON funziona
+facendo doppio clic sui file (il browser blocca i caricamenti su file://).
+Va aperto tramite un piccolo server web locale. Due modi semplici:
+
+1) Con Python (gia presente su Mac/Linux):
+   - Apri il Terminale dentro questa cartella
+   - Esegui:  python3 -m http.server 8000
+   - Apri nel browser:  http://localhost:8000/Scodinzolandia%20Home.dc.html
+
+2) Con Node.js:
+   - npx serve .
+   - Apri l'indirizzo mostrato a terminale
+
+In alternativa, carica l'intera cartella su un qualsiasi hosting web
+(Netlify, Vercel, il tuo spazio FTP) e il sito sara online.
+
+NOTE
+- Le foto dei prodotti provengono da un servizio di immagini casuali
+  (placedog.net / cataas.com): serve una connessione a Internet per vederle.
+- Per una versione completamente offline e con le TUE foto reali,
+  inviami le immagini dei prodotti e le inserisco al posto dei segnaposto.

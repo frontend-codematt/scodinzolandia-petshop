@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>@keyframes dropdown{0%{opacity:0;transform:translateY(-8px)}100%{opacity:1;transform:translateY(0)}}</style>
+</helmet>
+<div style="width:100%;font-family:'Nunito',sans-serif">
+  <div style="background:#6bc1bc;color:#fff;text-align:center;font-weight:700;font-size:13px;letter-spacing:.02em;padding:9px 16px">
+    Spedizione gratuita sopra i 49&euro; &nbsp;&middot;&nbsp; Consegna in 24/48h &nbsp;&middot;&nbsp; Ritiro gratuito in negozio
+  </div>
+  <header style="position:sticky;top:0;z-index:50;background:rgba(253,252,250,.94);backdrop-filter:blur(10px);border-bottom:1px solid #efeae3">
+    <!-- desktop bar -->
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <div style="max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:20px">
+        <a href="Scodinzolandia Home.dc.html" style="flex:none"><img src="assets/logo.png" alt="Scodinzolandia Pet Shop" style="height:54px;width:auto;display:block"/></a>
+        <nav style="display:flex;gap:24px;margin-left:6px;font-family:'Quicksand';font-weight:600;font-size:16px">
+          <a href="Scodinzolandia Catalogo.dc.html?cat=cane" style="{{ navCane }}" style-hover="color:#6bc1bc">Cane</a>
+          <a href="Scodinzolandia Catalogo.dc.html?cat=gatto" style="{{ navGatto }}" style-hover="color:#6bc1bc">Gatto</a>
+          <a href="Scodinzolandia Catalogo.dc.html" style="{{ navTutti }}" style-hover="color:#6bc1bc">Catalogo</a>
+          <a href="Scodinzolandia Catalogo.dc.html?sale=1" style="color:#e58ea7;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent" style-hover="border-bottom:2px solid #e58ea7">Offerte</a>
+        </nav>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
+          <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #ece8e2;border-radius:999px;padding:9px 16px;width:200px">
+            <span style="color:#b4b9bb;font-size:15px">&#9906;</span>
+            <input placeholder="Cerca prodotti..." style="border:none;outline:none;background:none;font-family:'Nunito';font-size:14px;width:100%;color:#4b4f52"/>
+          </div>
+          <button style="border:none;background:#f1f5f4;width:42px;height:42px;border-radius:999px;cursor:pointer;font-size:18px;color:#6bc1bc" style-hover="background:#e3f1ef">&#9825;</button>
+          <a href="Scodinzolandia Carrello.dc.html" style="position:relative;text-decoration:none;background:#6bc1bc;width:42px;height:42px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex:none" style-hover="background:#57b1ab">
+            &#128722;
+            <span style="position:absolute;top:-4px;right:-4px;background:#e58ea7;color:#fff;font-family:'Nunito';font-weight:800;font-size:11px;min-width:19px;height:19px;border-radius:999px;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid #fdfcfa">{{ count }}</span>
+          </a>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- mobile bar: hamburger | logo | cart -->
+    <sc-if value="{{ mobile }}" hint-placeholder-val="x">
+      <div style="margin:0 auto;padding:10px 16px;display:grid;grid-template-columns:42px 1fr 42px;align-items:center;gap:10px">
+        <button onClick="{{ toggle }}" style="border:none;background:#f1f5f4;width:42px;height:42px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;flex:none">
+          <span style="width:18px;height:2px;background:#4b4f52;border-radius:2px;display:block"></span>
+          <span style="width:18px;height:2px;background:#4b4f52;border-radius:2px;display:block"></span>
+          <span style="width:18px;height:2px;background:#4b4f52;border-radius:2px;display:block"></span>
+        </button>
+        <a href="Scodinzolandia Home.dc.html" style="justify-self:center;flex:none"><img src="assets/logo.png" alt="Scodinzolandia Pet Shop" style="height:48px;width:auto;display:block"/></a>
+        <a href="Scodinzolandia Carrello.dc.html" style="position:relative;justify-self:end;text-decoration:none;background:#6bc1bc;width:42px;height:42px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex:none" style-hover="background:#57b1ab">
+          &#128722;
+          <span style="position:absolute;top:-4px;right:-4px;background:#e58ea7;color:#fff;font-family:'Nunito';font-weight:800;font-size:11px;min-width:19px;height:19px;border-radius:999px;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid #fdfcfa">{{ count }}</span>
+        </a>
+      </div>
+    </sc-if>
+
+    <!-- mobile dropdown -->
+    <sc-if value="{{ menuVisible }}" hint-placeholder-val="x">
+      <div style="border-top:1px solid #efeae3;background:#fdfcfa;padding:16px 20px 20px;animation:dropdown .2s ease">
+        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #ece8e2;border-radius:999px;padding:11px 16px;margin-bottom:14px">
+          <span style="color:#b4b9bb;font-size:15px">&#9906;</span>
+          <input placeholder="Cerca prodotti..." style="border:none;outline:none;background:none;font-family:'Nunito';font-size:15px;width:100%;color:#4b4f52"/>
+        </div>
+        <nav style="display:flex;flex-direction:column;font-family:'Quicksand';font-weight:600;font-size:18px">
+          <a href="Scodinzolandia Catalogo.dc.html?cat=cane" style="color:#4b4f52;text-decoration:none;padding:13px 4px;border-bottom:1px solid #f1ede6">Cane</a>
+          <a href="Scodinzolandia Catalogo.dc.html?cat=gatto" style="color:#4b4f52;text-decoration:none;padding:13px 4px;border-bottom:1px solid #f1ede6">Gatto</a>
+          <a href="Scodinzolandia Catalogo.dc.html" style="color:#4b4f52;text-decoration:none;padding:13px 4px;border-bottom:1px solid #f1ede6">Catalogo</a>
+          <a href="Scodinzolandia Catalogo.dc.html?sale=1" style="color:#e58ea7;text-decoration:none;padding:13px 4px">Offerte</a>
+        </nav>
+      </div>
+    </sc-if>
+  </header>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:120},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;cane&quot;,&quot;gatto&quot;,&quot;catalogo&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { count: 0, width: typeof window !== 'undefined' ? window.innerWidth : 1240, open: false };
+
+  async componentDidMount() {
+    this.mod = await import(new URL('cart.js', location.href).href);
+    const upd = () => this.setState({ count: this.mod.cartCount() });
+    this._off = this.mod.onChange(upd);
+    upd();
+    this._onResize = () => {
+      const w = window.innerWidth;
+      this.setState(s => ({ width: w, open: w > 860 ? false : s.open }));
+    };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    this._off && this._off();
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  renderVals() {
+    const a = this.props.active;
+    const base = "text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;";
+    const on = "color:#6bc1bc;border-bottom:2px solid #6bc1bc;";
+    const off = "color:#4b4f52;";
+    const mobile = this.state.width <= 860;
+    return {
+      count: this.state.count,
+      desktop: !mobile,
+      mobile,
+      menuVisible: mobile && this.state.open,
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      navCane: base + (a === 'cane' ? on : off),
+      navGatto: base + (a === 'gatto' ? on : off),
+      navTutti: base + (a === 'catalogo' ? on : off),
+    };
+  }
+}
+</script>
+</body>
+</html>

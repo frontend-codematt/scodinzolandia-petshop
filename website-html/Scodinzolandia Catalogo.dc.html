@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#fdfcfa">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#fdfcfa"/>
+    <circle cx="600" cy="360" r="150" fill="#6bc1bc"/>
+    <g fill="#fff">
+      <ellipse cx="600" cy="395" rx="62" ry="48"/>
+      <ellipse cx="540" cy="320" rx="24" ry="34"/>
+      <ellipse cx="660" cy="320" rx="24" ry="34"/>
+      <ellipse cx="492" cy="372" rx="20" ry="28"/>
+      <ellipse cx="708" cy="372" rx="20" ry="28"/>
+    </g>
+    <text x="600" y="600" font-family="Quicksand, sans-serif" font-size="72" font-weight="700" fill="#3f4346" text-anchor="middle">Scodinzolandia</text>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:#4b4f52;background:#fdfcfa;-webkit-font-smoothing:antialiased}
+  ::selection{background:#bfe7e4}
+  @media(max-width:860px){.m-2{grid-template-columns:repeat(2,1fr)!important;gap:14px!important}.m-1{grid-template-columns:1fr!important}}
+</style>
+</helmet>
+<div style="width:100%;overflow-x:hidden">
+  <dc-import name="Header" active="{{ headerActive }}" hint-size="100%,120px"></dc-import>
+
+  <!-- page head -->
+  <div style="max-width:1240px;margin:0 auto;padding:26px 24px 8px">
+    <div style="font-family:'Nunito';font-size:14px;color:#aeb3b5">
+      <a href="Scodinzolandia Home.dc.html" style="color:#aeb3b5;text-decoration:none">Home</a> &nbsp;/&nbsp; <span style="color:#6bc1bc;font-weight:700">{{ crumb }}</span>
+    </div>
+    <h1 style="font-family:'Quicksand';font-weight:700;font-size:40px;color:#3f4346;margin-top:10px">{{ title }}</h1>
+    <p style="font-family:'Nunito';font-size:17px;color:#9aa0a3;margin-top:4px">{{ count }} prodotti disponibili</p>
+  </div>
+
+  <div class="m-1" style="max-width:1240px;margin:0 auto;padding:14px 24px 60px;display:grid;grid-template-columns:248px 1fr;gap:36px;align-items:start">
+
+    <!-- sidebar -->
+    <aside style="position:sticky;top:96px;background:#fff;border:1px solid #efeae3;border-radius:22px;padding:24px">
+      <div style="font-family:'Quicksand';font-weight:700;font-size:15px;color:#3f4346;margin-bottom:12px">Animale</div>
+      <div style="display:flex;gap:8px;margin-bottom:24px">
+        <sc-if value="{{ aTutti }}" hint-placeholder-val="{{ true }}"><button onClick="{{ setAll }}" style="flex:1;font-family:'Quicksand';font-weight:700;font-size:14px;border:none;border-radius:12px;padding:10px;cursor:pointer;background:#6bc1bc;color:#fff">Tutti</button></sc-if>
+        <sc-if value="{{ aNotTutti }}" hint-placeholder-val="x"><button onClick="{{ setAll }}" style="flex:1;font-family:'Quicksand';font-weight:700;font-size:14px;border:1px solid #ece8e2;border-radius:12px;padding:10px;cursor:pointer;background:#fff;color:#8a8f91">Tutti</button></sc-if>
+        <sc-if value="{{ aCane }}" hint-placeholder-val="x"><button onClick="{{ setCane }}" style="flex:1;font-family:'Quicksand';font-weight:700;font-size:14px;border:none;border-radius:12px;padding:10px;cursor:pointer;background:#efbe82;color:#fff">Cane</button></sc-if>
+        <sc-if value="{{ aNotCane }}" hint-placeholder-val="{{ true }}"><button onClick="{{ setCane }}" style="flex:1;font-family:'Quicksand';font-weight:700;font-size:14px;border:1px solid #ece8e2;border-radius:12px;padding:10px;cursor:pointer;background:#fff;color:#8a8f91">Cane</button></sc-if>
+        <sc-if value="{{ aGatto }}" hint-placeholder-val="x"><button onClick="{{ setGatto }}" style="flex:1;font-family:'Quicksand';font-weight:700;font-size:14px;border:none;border-radius:12px;padding:10px;cursor:pointer;background:#e58ea7;color:#fff">Gatto</button></sc-if>
+        <sc-if value="{{ aNotGatto }}" hint-placeholder-val="{{ true }}"><button onClick="{{ setGatto }}" style="flex:1;font-family:'Quicksand';font-weight:700;font-size:14px;border:1px solid #ece8e2;border-radius:12px;padding:10px;cursor:pointer;background:#fff;color:#8a8f91">Gatto</button></sc-if>
+      </div>
+
+      <div style="font-family:'Quicksand';font-weight:700;font-size:15px;color:#3f4346;margin-bottom:12px">Categoria</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:24px">
+        <sc-for list="{{ catFilters }}" as="c" hint-placeholder-count="6">
+          <sc-if value="{{ c.active }}" hint-placeholder-val="x"><div onClick="{{ c.onClick }}" style="display:flex;justify-content:space-between;align-items:center;font-family:'Nunito';font-weight:700;font-size:15px;color:#3aa39c;background:#eaf6f5;border-radius:10px;padding:9px 12px;cursor:pointer">{{ c.name }}<span style="font-size:13px;color:#8fc9c4">{{ c.n }}</span></div></sc-if>
+          <sc-if value="{{ c.inactive }}" hint-placeholder-val="{{ true }}"><div onClick="{{ c.onClick }}" style="display:flex;justify-content:space-between;align-items:center;font-family:'Nunito';font-weight:600;font-size:15px;color:#6b7073;border-radius:10px;padding:9px 12px;cursor:pointer" style-hover="background:#f6f4f0">{{ c.name }}<span style="font-size:13px;color:#bcc0c2">{{ c.n }}</span></div></sc-if>
+        </sc-for>
+      </div>
+
+      <div style="font-family:'Quicksand';font-weight:700;font-size:15px;color:#3f4346;margin-bottom:12px">Solo offerte</div>
+      <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-family:'Nunito';font-weight:600;font-size:15px;color:#6b7073">
+        <input type="checkbox" checked="{{ sale }}" onChange="{{ toggleSale }}" style="width:18px;height:18px;accent-color:#e58ea7;cursor:pointer"/>
+        Mostra solo prodotti scontati
+      </label>
+    </aside>
+
+    <!-- grid col -->
+    <div>
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-bottom:18px">
+        <span style="font-family:'Nunito';font-size:14px;color:#9aa0a3">Ordina per</span>
+        <select onChange="{{ onSort }}" value="{{ sort }}" style="font-family:'Quicksand';font-weight:600;font-size:14px;color:#4b4f52;border:1px solid #ece8e2;border-radius:10px;padding:9px 14px;background:#fff;cursor:pointer;outline:none">
+          <option value="pop">Pi&ugrave; popolari</option>
+          <option value="asc">Prezzo crescente</option>
+          <option value="desc">Prezzo decrescente</option>
+        </select>
+      </div>
+
+      <div class="m-2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+        <sc-for list="{{ visibleProducts }}" as="p" hint-placeholder-count="9">
+          <div style="background:#fff;border:1px solid #efeae3;border-radius:22px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:0 16px 34px -20px rgba(60,60,60,.4)">
+            <a href="{{ p.href }}" style="position:relative;display:block;aspect-ratio:1/1;overflow:hidden">
+              <img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
+              <span style="position:absolute;top:12px;left:12px;font-family:'Quicksand';font-weight:700;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:{{ p.tagbg }};padding:4px 10px;border-radius:999px">{{ p.tag }}</span>
+              <sc-if value="{{ p.sale }}" hint-placeholder-val="x"><span style="position:absolute;top:12px;right:12px;font-family:'Quicksand';font-weight:700;font-size:11px;color:#fff;background:#e58ea7;padding:4px 9px;border-radius:999px">-{{ p.sale }}%</span></sc-if>
+            </a>
+            <div style="padding:16px;display:flex;flex-direction:column;flex:1">
+              <div style="font-family:'Nunito';font-size:12px;color:#aeb3b5;font-weight:700;letter-spacing:.03em;text-transform:uppercase">{{ p.brand }}</div>
+              <a href="{{ p.href }}" style="font-family:'Quicksand';font-weight:600;font-size:16px;color:#3f4346;line-height:1.25;margin:5px 0 8px;flex:1;text-decoration:none" style-hover="color:#6bc1bc">{{ p.name }}</a>
+              <div style="display:flex;align-items:center;gap:5px;margin-bottom:12px">
+                <span style="color:#efbe82;font-size:13px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span style="font-family:'Nunito';font-size:12px;color:#aeb3b5">({{ p.reviews }})</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+                <div style="display:flex;flex-direction:column">
+                  <sc-if value="{{ p.oldPrice }}" hint-placeholder-val="x"><span style="font-family:'Nunito';font-size:12px;color:#c2c6c8;text-decoration:line-through">{{ p.oldPrice }}</span></sc-if>
+                  <span style="font-family:'Quicksand';font-weight:700;font-size:21px;color:#3f4346">{{ p.price }}</span>
+                </div>
+                <button onClick="{{ p.add }}" style="border:none;background:#eaf6f5;color:#3aa39c;width:44px;height:44px;border-radius:14px;cursor:pointer;font-size:20px;flex:none" style-hover="background:#6bc1bc;color:#fff">+</button>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ empty }}" hint-placeholder-val="x">
+        <div style="text-align:center;padding:70px 20px;color:#aeb3b5;font-family:'Quicksand';font-weight:600;font-size:18px">Nessun prodotto con questi filtri &#128064;</div>
+      </sc-if>
+    </div>
+  </div>
+
+  <dc-import name="Footer" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = (() => {
+    const q = new URLSearchParams(location.search);
+    return { animale: q.get('cat') || 'tutti', categoria: q.get('categoria') || 'tutti', sale: q.get('sale') === '1', sort: 'pop', ready: false };
+  })();
+
+  async componentDidMount() {
+    this.mod = await import(new URL('cart.js', location.href).href);
+    this.setState({ ready: true });
+  }
+
+  renderVals() {
+    const { animale, categoria, sale, sort } = this.state;
+    const P = this.mod ? this.mod.PRODUCTS : [];
+    const fmt = this.mod ? this.mod.fmt : (n => n);
+
+    const cats = [...new Set(P.map(p => p.category))];
+    const inAnimale = P.filter(p => animale === 'tutti' || p.cat === animale);
+
+    let list = inAnimale
+      .filter(p => categoria === 'tutti' || p.category === categoria)
+      .filter(p => !sale || p.oldPrice);
+    if (sort === 'asc') list = [...list].sort((a, b) => a.price - b.price);
+    else if (sort === 'desc') list = [...list].sort((a, b) => b.price - a.price);
+    else list = [...list].sort((a, b) => b.reviews - a.reviews);
+
+    const visible = list.map(p => ({
+      ...p,
+      href: 'Scodinzolandia Prodotto.dc.html?id=' + p.id,
+      tag: p.cat === 'cane' ? 'Cane' : 'Gatto',
+      tagbg: p.cat === 'cane' ? '#dca94f' : '#e58ea7',
+      price: fmt(p.price),
+      oldPrice: p.oldPrice ? fmt(p.oldPrice) : null,
+      sale: p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : null,
+      add: () => this.mod && this.mod.addToCart(p.id),
+    }));
+
+    const titles = { tutti: 'Tutto il catalogo', cane: 'Mondo Cane', gatto: 'Mondo Gatto' };
+
+    return {
+      headerActive: animale === 'cane' ? 'cane' : animale === 'gatto' ? 'gatto' : 'catalogo',
+      crumb: sale ? 'Offerte' : titles[animale],
+      title: sale ? 'Offerte della settimana' : titles[animale],
+      count: visible.length,
+      empty: this.state.ready && visible.length === 0,
+      sale,
+      sort,
+      aTutti: animale === 'tutti', aNotTutti: animale !== 'tutti',
+      aCane: animale === 'cane', aNotCane: animale !== 'cane',
+      aGatto: animale === 'gatto', aNotGatto: animale !== 'gatto',
+      setAll: () => this.setState({ animale: 'tutti' }),
+      setCane: () => this.setState({ animale: 'cane' }),
+      setGatto: () => this.setState({ animale: 'gatto' }),
+      toggleSale: () => this.setState(s => ({ sale: !s.sale })),
+      onSort: e => this.setState({ sort: e.target.value }),
+      catFilters: [
+        { name: 'Tutte', n: inAnimale.length, key: 'tutti' },
+        ...cats.map(c => ({ name: c, n: inAnimale.filter(p => p.category === c).length, key: c })),
+      ].map(c => ({
+        ...c,
+        active: categoria === c.key,
+        inactive: categoria !== c.key,
+        onClick: () => this.setState({ categoria: c.key }),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>
